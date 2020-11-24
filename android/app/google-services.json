@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "513798348686",
+    "firebase_url": "https://daqui-app.firebaseio.com",
+    "project_id": "daqui-app",
+    "storage_bucket": "daqui-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513798348686:android:1ce6e268acb3de64fdcedf",
+        "android_client_info": {
+          "package_name": "com.ocktek.daqui.daqui_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513798348686-qu1ovosmsgmnkv79dm1dv68u3rvlpf1e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ocktek.daqui.daqui_app",
+            "certificate_hash": "86d0a1f31e78ed0681179072fa32110e45fc951f"
+          }
+        },
+        {
+          "client_id": "513798348686-h7k7fsd4sdciclagrea3f69o2bm7d96n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMu1XrCz4MtmUEaY26z8pY4CWnSEedLH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513798348686-h7k7fsd4sdciclagrea3f69o2bm7d96n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
