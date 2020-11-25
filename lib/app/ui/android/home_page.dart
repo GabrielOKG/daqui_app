@@ -101,7 +101,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Container lojaTiles(Size size) {
+  Container lojatiles(Size size) {
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: size.width * 0.024, vertical: size.height * 0.005),

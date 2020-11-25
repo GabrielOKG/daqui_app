@@ -11,6 +11,8 @@ class LoginController extends GetxController {
   final TextEditingController passwordTextingController =
       TextEditingController();
   final TextEditingController nameTextingController = TextEditingController();
+  final TextEditingController lastnameTextingController =
+      TextEditingController();
 
   void register() async {
     Get.dialog(
@@ -19,9 +21,10 @@ class LoginController extends GetxController {
         ),
         barrierDismissible: false);
     UserModel user = await repository.createUserWithEmailAndPassword(
-        emailTextingController.text,
-        passwordTextingController.text,
-        nameTextingController.text);
+      emailTextingController.text,
+      passwordTextingController.text,
+      nameTextingController.text,
+    );
     if (user != null) {
       Get.offAllNamed(Routes.HOME, arguments: user);
     }
