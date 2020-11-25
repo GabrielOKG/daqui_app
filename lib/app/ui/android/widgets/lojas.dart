@@ -39,4 +39,12 @@ List<Map<String, String>> lojas = [
     'tempo': '35min',
     'categoria': 'fast food'
   },
+  {
+    'img': 'assets/burgao.jpg',
+    'title': 'Hamburgão do sul',
+    'frete': 'Frete Gratis',
+    'rate': '4.1 (11)',
+    'tempo': '35min',
+    'categoria': 'fast food'
+  },
 ];

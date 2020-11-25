@@ -46,7 +46,7 @@ class LojaPage extends GetView<LojaController> {
           ),
           centerTitle: true,
           title: Text(
-            'Nome Loja',
+            'Mercearia Mendes',
             style: TextStyle(color: Colors.black54),
           )),
       body: Scaffold(

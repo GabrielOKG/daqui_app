@@ -13,7 +13,7 @@ class InitialPage extends StatelessWidget {
       body: Stack(children: [
         SplashScreen(
           loaderColor: Colors.transparent,
-          seconds: 3,
+          seconds: 4,
           navigateAfterSeconds: Routes.HOME,
         ),
         Container(

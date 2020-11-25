@@ -77,10 +77,10 @@ class HomePage extends GetView<LojaController> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    if (index == 2) {
+                    if (index == 0) {
                       Get.toNamed(Routes.LOJA);
                     }
-                    if (index == 5) {
+                    if (index == 3) {
                       Get.toNamed(Routes.SERVICO);
                     }
                   },
@@ -129,6 +129,7 @@ class HomePage extends GetView<LojaController> {
             ),
             width: size.width * 0.2,
             height: size.height * 0.1,
+            child: Image.asset(img),
             // child: Image.asset('assets/temp/$img'),
           ),
           Column(
