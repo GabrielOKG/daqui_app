@@ -78,7 +78,6 @@ class LoginPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
-              Divider(),
               FlatButton(
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
@@ -86,9 +85,7 @@ class LoginPage extends StatelessWidget {
                   }
                 },
                 child: Container(
-                  margin: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.1,
-                      vertical: size.height * 0.01),
+                  width: size.width * 0.8,
                   height: size.height * 0.07,
                   decoration: BoxDecoration(
                       color: kprimarycolor,

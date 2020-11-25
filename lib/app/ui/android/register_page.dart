@@ -30,9 +30,8 @@ class RegisterPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
-          child: ListView(
-            shrinkWrap: true,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 height: size.height * 0.03,
