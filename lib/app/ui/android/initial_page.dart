@@ -14,7 +14,7 @@ class InitialPage extends StatelessWidget {
         SplashScreen(
           loaderColor: Colors.transparent,
           seconds: 3,
-          navigateAfterSeconds: Routes.LOGIN,
+          navigateAfterSeconds: Routes.HOME,
         ),
         Container(
             margin: EdgeInsets.only(

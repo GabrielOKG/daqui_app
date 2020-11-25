@@ -1,3 +1,4 @@
+import 'package:daqui_app/app/ui/android/widgets/lojas.dart';
 import 'package:daqui_app/app/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               child: Icon(
-                Icons.shopping_bag,
+                Icons.menu,
                 color: kprimarycolor,
                 size: 36,
               ),
@@ -62,46 +63,66 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-          child: Column(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: size.width * 0.024, vertical: size.height * 0.015),
-            child: Text(
-              'Segmentos',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+          // Container(
+          //   margin: EdgeInsets.symmetric(
+          //       horizontal: size.width * 0.024, vertical: size.height * 0.015),
+          //   child: Text(
+          //     'Segmentos',
+          //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+          //   ),
+          // ),
+          // SingleChildScrollView(
+          //   scrollDirection: Axis.horizontal,
+          //   child: Row(
+          //     children: [
+          //       Segmentos(
+          //           size: size,
+          //           img: 'assets/hortifruti.jpg',
+          //           text: 'Hortifruti'),
+          //       Segmentos(
+          //           size: size, img: 'assets/mercado.jpg', text: 'Mercearia'),
+          //       Segmentos(
+          //           size: size, img: 'assets/farmacia.jpg', text: 'Farmacia'),
+          //     ],
+          //   ),
+          // ),
+          // Container(
+          //   margin: EdgeInsets.symmetric(
+          //       horizontal: size.width * 0.024, vertical: size.height * 0.015),
+          //   child: Text('Lojas',
+          //       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
+          // ),
+
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: false,
+              itemCount: lojas.length,
+              itemBuilder: (context, index) {
+                return lojatiles(size,
+                    img: lojas[index]['img'],
+                    title: lojas[index]['title'],
+                    rate: lojas[index]['rate'],
+                    frete: lojas[index]['frete'],
+                    tempo: lojas[index]['tempo'],
+                    categoria: lojas[index]['categoria']);
+              },
             ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                Segmentos(
-                    size: size,
-                    img: 'assets/hortifruti.jpg',
-                    text: 'Hortifruti'),
-                Segmentos(
-                    size: size, img: 'assets/mercado.jpg', text: 'Mercearia'),
-                Segmentos(
-                    size: size, img: 'assets/farmacia.jpg', text: 'Farmacia'),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: size.width * 0.024, vertical: size.height * 0.015),
-            child: Text('Lojas',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
-          ),
-          //TODO Lojas tiles
+          )
         ],
-      )),
+      ),
     );
   }
 
-  Container lojatiles(Size size) {
+  Container lojatiles(Size size,
+      {String img,
+      String title,
+      String frete,
+      String rate,
+      String tempo,
+      String categoria}) {
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: size.width * 0.024, vertical: size.height * 0.005),
@@ -124,14 +145,14 @@ class HomePage extends StatelessWidget {
             ),
             width: size.width * 0.2,
             height: size.height * 0.1,
-            child: Image.asset('assets/logo.png'),
+            // child: Image.asset('assets/temp/$img'),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Burguer King - Capim Dourado',
+                title,
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(height: size.height * 0.008),
@@ -142,7 +163,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.amber,
                     size: 14,
                   ),
-                  Text(' 4.6 (69)',
+                  Text(rate,
                       style: TextStyle(color: Colors.black.withOpacity(0.6))),
                   Text(
                     '  ',
@@ -152,15 +173,15 @@ class HomePage extends StatelessWidget {
                     Icons.lock_clock,
                     size: 14,
                   ),
-                  Text(' 25min',
+                  Text(tempo,
                       style: TextStyle(color: Colors.black.withOpacity(0.6))),
                   Text('  '),
-                  Text('Mercearia', style: TextStyle(color: kprimarycolor)),
+                  Text(categoria, style: TextStyle(color: kprimarycolor)),
                 ],
               ),
               SizedBox(height: size.height * 0.008),
               Text(
-                'Entrega gratis',
+                '$frete',
                 style: TextStyle(color: Colors.black.withOpacity(0.6)),
               ),
             ],
@@ -185,14 +206,13 @@ class Segmentos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width * 0.3,
-      margin: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+      width: size.width * 0.23,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: size.width * 0.3,
-            height: size.height * 0.12,
+            width: size.width * 0.2,
+            height: size.height * 0.08,
             color: Colors.grey,
             child: Image.asset(img),
           ),

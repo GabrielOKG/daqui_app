@@ -9,6 +9,7 @@ class LoginApiClient {
       .authStateChanges()
       .map((User currentUser) => UserModel.fromSnapshot(currentUser));
 //Cria usuario
+
   Future<UserModel> createUserWithEmailAndPassword(
       String email, String password, String name) async {
     try {
@@ -16,7 +17,9 @@ class LoginApiClient {
               email: email, password: password))
           .user;
       // atualizando nome usuario
+
       await currentUser.updateProfile(displayName: name);
+
       await currentUser.reload();
       return UserModel.fromSnapshot(currentUser);
     } catch (e) {
