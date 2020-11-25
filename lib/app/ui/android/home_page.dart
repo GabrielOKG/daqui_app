@@ -1,9 +1,13 @@
+import 'package:daqui_app/app/controller/loja_controller.dart';
+import 'package:daqui_app/app/routes/app_routes.dart';
 import 'package:daqui_app/app/ui/android/widgets/lojas.dart';
 import 'package:daqui_app/app/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends GetView<LojaController> {
+  LojaController _loja = Get.find<LojaController>();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -66,48 +70,24 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Container(
-          //   margin: EdgeInsets.symmetric(
-          //       horizontal: size.width * 0.024, vertical: size.height * 0.015),
-          //   child: Text(
-          //     'Segmentos',
-          //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-          //   ),
-          // ),
-          // SingleChildScrollView(
-          //   scrollDirection: Axis.horizontal,
-          //   child: Row(
-          //     children: [
-          //       Segmentos(
-          //           size: size,
-          //           img: 'assets/hortifruti.jpg',
-          //           text: 'Hortifruti'),
-          //       Segmentos(
-          //           size: size, img: 'assets/mercado.jpg', text: 'Mercearia'),
-          //       Segmentos(
-          //           size: size, img: 'assets/farmacia.jpg', text: 'Farmacia'),
-          //     ],
-          //   ),
-          // ),
-          // Container(
-          //   margin: EdgeInsets.symmetric(
-          //       horizontal: size.width * 0.024, vertical: size.height * 0.015),
-          //   child: Text('Lojas',
-          //       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
-          // ),
-
           Expanded(
             child: ListView.builder(
               shrinkWrap: false,
               itemCount: lojas.length,
               itemBuilder: (context, index) {
-                return lojatiles(size,
-                    img: lojas[index]['img'],
-                    title: lojas[index]['title'],
-                    rate: lojas[index]['rate'],
-                    frete: lojas[index]['frete'],
-                    tempo: lojas[index]['tempo'],
-                    categoria: lojas[index]['categoria']);
+                return GestureDetector(
+                  onTap: () {
+                    _loja.obj = index;
+                    Get.toNamed(Routes.LOJA);
+                  },
+                  child: lojatiles(size,
+                      img: lojas[index]['img'],
+                      title: lojas[index]['title'],
+                      rate: lojas[index]['rate'],
+                      frete: lojas[index]['frete'],
+                      tempo: lojas[index]['tempo'],
+                      categoria: lojas[index]['categoria']),
+                );
               },
             ),
           )
