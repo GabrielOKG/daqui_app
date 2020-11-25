@@ -76,22 +76,18 @@ class LojaPage extends GetView<LojaController> {
                       ),
                       Categorias(
                         size: size,
-                        icon: Icons.local_drink,
                         text: 'Congelados',
                       ),
                       Categorias(
                         size: size,
-                        icon: Icons.local_drink,
                         text: 'Bebidas',
                       ),
                       Categorias(
                         size: size,
-                        icon: Icons.local_drink,
                         text: 'Congelados',
                       ),
                       Categorias(
                         size: size,
-                        icon: Icons.local_drink,
                         text: 'Limpeza',
                       ),
                       Categorias(
@@ -254,20 +250,15 @@ class Produtos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: size.width * 0.01),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: size.width * 0.28,
             height: size.height * 0.18,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Colors.purple,
-            ),
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: 32,
+              color: Colors.grey,
             ),
           ),
           SizedBox(
@@ -277,15 +268,15 @@ class Produtos extends StatelessWidget {
             margin: EdgeInsets.only(left: 12),
             width: size.width * 0.28,
             child: Text(
-              text,
+              'Nome produto e pequena descrição',
               style: TextStyle(),
               textAlign: TextAlign.start,
             ),
           ),
           Container(
-            width: size.width * 0.28,
+            width: size.width * 0.18,
             child: Text(
-              'R\$ 5.80',
+              '  R\$ 5.80',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -318,12 +309,7 @@ class Categorias extends StatelessWidget {
             height: 80,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Colors.purple,
-            ),
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: 32,
+              color: Colors.grey,
             ),
           ),
           SizedBox(
