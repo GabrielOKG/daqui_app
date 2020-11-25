@@ -7,7 +7,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: size.height * 0.08,
@@ -72,7 +71,7 @@ class HomePage extends StatelessWidget {
                 horizontal: size.width * 0.024, vertical: size.height * 0.015),
             child: Text(
               'Segmentos',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
             ),
           ),
           SingleChildScrollView(
@@ -93,10 +92,8 @@ class HomePage extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(
                 horizontal: size.width * 0.024, vertical: size.height * 0.015),
-            child: Text(
-              'Lojas',
-              style: TextStyle(fontSize: 16),
-            ),
+            child: Text('Lojas',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
           ),
           //TODO Lojas tiles
         ],
@@ -193,7 +190,12 @@ class Segmentos extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(img),
+          Container(
+            width: size.width * 0.3,
+            height: size.height * 0.12,
+            color: Colors.grey,
+            child: Image.asset(img),
+          ),
           Text(
             text,
             style: TextStyle(

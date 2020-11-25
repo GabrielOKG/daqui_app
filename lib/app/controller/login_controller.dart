@@ -13,6 +13,11 @@ class LoginController extends GetxController {
   final TextEditingController nameTextingController = TextEditingController();
 
   void register() async {
+    Get.dialog(
+        Center(
+          child: CircularProgressIndicator(),
+        ),
+        barrierDismissible: false);
     UserModel user = await repository.createUserWithEmailAndPassword(
         emailTextingController.text,
         passwordTextingController.text,
@@ -23,6 +28,11 @@ class LoginController extends GetxController {
   }
 
   void login() async {
+    Get.dialog(
+        Center(
+          child: CircularProgressIndicator(),
+        ),
+        barrierDismissible: false);
     UserModel user = await repository.signInWithEmailAndPassword(
         emailTextingController.text, passwordTextingController.text);
     if (user != null) {

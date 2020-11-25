@@ -1,10 +1,9 @@
 import 'package:daqui_app/app/controller/login_controller.dart';
-import 'package:daqui_app/app/routes/app_routes.dart';
 import 'package:daqui_app/app/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final LoginController _loginController = Get.find<LoginController>();
   final _formKey = GlobalKey<FormState>();
   @override
@@ -39,16 +38,9 @@ class LoginPage extends StatelessWidget {
               width: size.width * 0.8,
               child: TextFormField(
                 controller: _loginController.emailTextingController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return "Campo obrigatório.";
-                  } else if (!GetUtils.isEmail(value)) {
-                    return "Campo requer um E-mail válido.";
-                  }
-                  return null;
-                },
+                validator: (value) {},
                 keyboardType: TextInputType.emailAddress,
-                autofocus: false,
+                autofocus: true,
                 decoration: InputDecoration(
                     hintText: 'Email',
                     contentPadding:
@@ -63,14 +55,6 @@ class LoginPage extends StatelessWidget {
               width: size.width * 0.8,
               child: TextFormField(
                 controller: _loginController.passwordTextingController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return "Campo obrigatório.";
-                  } else if (value.length < 6) {
-                    return "Campo requer mínimo 6 caracteres.";
-                  }
-                  return null;
-                },
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: 'Senha',
@@ -80,28 +64,21 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10))),
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                if (_formKey.currentState.validate()) {
-                  _loginController.login();
-                }
-              },
-              child: Container(
-                margin: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.1, vertical: size.height * 0.01),
-                width: size.width * 0.9,
-                height: size.height * 0.07,
-                decoration: BoxDecoration(
-                    color: kprimarycolor,
-                    borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Text(
-                    'Entrar',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                    ),
+            Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.1, vertical: size.height * 0.01),
+              width: size.width * 0.9,
+              height: size.height * 0.07,
+              decoration: BoxDecoration(
+                  color: kprimarycolor,
+                  borderRadius: BorderRadius.circular(10)),
+              child: Center(
+                child: Text(
+                  'Entrar',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
                   ),
                 ),
               ),
@@ -123,14 +100,9 @@ class LoginPage extends StatelessWidget {
                     'Não possui uma conta?',
                     style: TextStyle(color: Colors.black54),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.toNamed(Routes.REGISTER);
-                    },
-                    child: Text(
-                      ' Criar conta',
-                      style: TextStyle(color: Colors.blue[600]),
-                    ),
+                  Text(
+                    ' Criar conta',
+                    style: TextStyle(color: Colors.blue[600]),
                   ),
                 ],
               ),

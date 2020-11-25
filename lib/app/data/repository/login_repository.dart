@@ -1,11 +1,8 @@
 import 'package:daqui_app/app/data/model/user_model.dart';
 import 'package:daqui_app/app/data/provider/login_provider.dart';
-import 'package:meta/meta.dart';
 
 class LoginRepository {
-  final LoginApiClient apiClient;
-
-  LoginRepository({this.apiClient}) : assert(apiClient != null);
+  final LoginApiClient apiClient = LoginApiClient();
 
   Future<UserModel> createUserWithEmailAndPassword(
       String email, String password, String nome) {
