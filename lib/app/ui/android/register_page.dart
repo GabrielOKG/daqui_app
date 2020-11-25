@@ -38,7 +38,9 @@ class RegisterPage extends StatelessWidget {
               width: size.width * 0.8,
               child: TextFormField(
                 controller: _loginController.emailTextingController,
-                validator: (value) {},
+                validator: (value) {
+                  //TODO
+                },
                 keyboardType: TextInputType.emailAddress,
                 autofocus: true,
                 decoration: InputDecoration(

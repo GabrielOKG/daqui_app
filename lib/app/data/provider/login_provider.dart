@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginApiClient {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
 //Retorna usuario logado
   Stream<UserModel> get onAuthStateChanged => _firebaseAuth
       .authStateChanges()
