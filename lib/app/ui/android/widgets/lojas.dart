@@ -40,9 +40,9 @@ List<Map<String, String>> lojas = [
     'categoria': 'Serviços'
   },
   {
-    'img': '',
+    'img': 'assets/cabelo.png',
     'title': 'Cabeleleira Leila',
-    'frete': 'Por agendamento',
+    'frete': ',Por agendamento',
     'rate': '5.0 (12)',
     'tempo': '30min',
     'categoria': 'Serviços'

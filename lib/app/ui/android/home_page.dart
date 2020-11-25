@@ -77,8 +77,12 @@ class HomePage extends GetView<LojaController> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    _loja.obj = index;
-                    Get.toNamed(Routes.LOJA);
+                    if (index == 2) {
+                      Get.toNamed(Routes.LOJA);
+                    }
+                    if (index == 5) {
+                      Get.toNamed(Routes.SERVICO);
+                    }
                   },
                   child: lojatiles(size,
                       img: lojas[index]['img'],

@@ -5,6 +5,7 @@ import 'package:daqui_app/app/ui/android/initial_page.dart';
 import 'package:daqui_app/app/ui/android/login_page.dart';
 import 'package:daqui_app/app/ui/android/loja_page.dart';
 import 'package:daqui_app/app/ui/android/register_page.dart';
+import 'package:daqui_app/app/ui/android/servico_page.dart';
 import 'package:get/get.dart';
 import 'package:daqui_app/app/routes/app_routes.dart';
 
@@ -19,5 +20,9 @@ class AppPages {
         binding: LoginBinding()),
     GetPage(name: Routes.HOME, page: () => HomePage(), binding: LojaBinding()),
     GetPage(name: Routes.LOJA, page: () => LojaPage(), binding: LojaBinding()),
+    GetPage(
+        name: Routes.SERVICO,
+        page: () => ServicoPage(),
+        binding: LojaBinding()),
   ];
 }
